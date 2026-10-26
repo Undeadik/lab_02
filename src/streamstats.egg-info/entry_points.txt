@@ -1,0 +1,2 @@
+[console_scripts]
+toolkit = streamstats.__main__:main
