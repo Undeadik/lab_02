@@ -56,3 +56,10 @@ def test_parse_csv_valid():
 
     assert len(events) == 1
     assert events[0].level == Level.ERROR
+    
+    
+def test_parse_empty_file():
+    """Тест: пустой файл не вызывает ошибок."""
+    fake_file = StringIO("")
+    events = list(parse_jsonl(fake_file, filename="empty.jsonl"))
+    assert events == []
